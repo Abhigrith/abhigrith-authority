@@ -9,8 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Abhigrithauthority">
-        <activity android:name=".WardenResultActivity"></activity>
-        <activity android:name=".WardenActivity" />
+        <activity android:name=".parent.ParentResultActivity" />
+        <activity android:name=".parent.ParentActivity" />
+        <activity android:name=".warden.WardenResultActivity" />
+        <activity android:name=".warden.WardenActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>

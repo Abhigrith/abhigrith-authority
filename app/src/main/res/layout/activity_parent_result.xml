@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity"
+    tools:context=".parent.ParentResultActivity"
     android:background="@color/white">
 
     <LinearLayout
@@ -17,28 +17,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Home activity"
+            android:text="Parent Result activity"
             android:textAlignment="center"
             android:textStyle="bold"
             android:textAllCaps="true"
             android:textSize="25sp"
             android:textColor="@color/black"
             android:fontFamily="casual"/>
-
-
-        <Button
-            android:id="@+id/btn_authority_home_warden"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="warden"
-            android:textAlignment="center"/>
-
-        <Button
-            android:id="@+id/btn_home_parent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Parent"
-            android:textAlignment="center"/>
     </LinearLayout>
 
 </RelativeLayout>

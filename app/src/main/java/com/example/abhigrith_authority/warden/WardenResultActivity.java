@@ -1,8 +1,10 @@
-package com.example.abhigrith_authority;
+package com.example.abhigrith_authority.warden;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.abhigrith_authority.R;
 
 public class WardenResultActivity extends AppCompatActivity {
 
