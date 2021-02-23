@@ -7,15 +7,29 @@
     tools:context=".LoginActivity"
     android:background="@color/white">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Abhigrith"
+        android:textAlignment="center"
+        android:textSize="45sp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:fontFamily="monospace"
+        android:layout_marginTop="150dp"/>
+
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true">
+        android:layout_centerVertical="true"
+        android:layout_margin="15dp">
+
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/tv_authroity_login_activity"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Login activity"
             android:textAlignment="center"
@@ -23,14 +37,56 @@
             android:textAllCaps="true"
             android:textSize="25sp"
             android:textColor="@color/black"
-            android:fontFamily="casual"/>
+            android:fontFamily="casual"
+            android:layout_marginBottom="100dp"/>
 
-        <Button
-            android:id="@+id/btn_authority_login_skip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Skip"
-            android:textAlignment="center"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/et_login_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Username"
+                android:text="" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/et_data_logger_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:text=""
+                android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_authority_login_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:textAlignment="center"/>
+
+            <Button
+                android:id="@+id/btn_authority_login_skip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Skip"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
     </LinearLayout>
-
 </RelativeLayout>
