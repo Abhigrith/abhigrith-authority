@@ -127,11 +127,11 @@
                     android:textColor="@android:color/black"
                     android:textStyle="bold" />
 
-                <!--                <Button-->
-                <!--                    android:layout_width="wrap_content"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:text="Skip"-->
-                <!--                    android:id="@+id/btn_authority_login_skip"/>-->
+                <Button
+                    android:id="@+id/btn_authority_login_skip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Skip" />
 
             </LinearLayout>
         </LinearLayout>
