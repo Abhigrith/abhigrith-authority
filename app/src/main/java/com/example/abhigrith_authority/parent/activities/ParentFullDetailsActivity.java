@@ -1,4 +1,4 @@
-package com.example.abhigrith_authority.parent;
+package com.example.abhigrith_authority.parent.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.abhigrith_authority.R;
 
-public class ParentResultActivity extends AppCompatActivity {
+public class ParentFullDetailsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
