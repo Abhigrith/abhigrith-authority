@@ -9,11 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Abhigrithauthority">
+        <activity android:name=".DashboardActivity"></activity>
         <activity android:name=".parent.activities.ParentFullDetailsActivity" />
         <activity android:name=".parent.activities.ParentPendingAuthRequestsActivity" />
         <activity android:name=".orphanage.activities.OrphanageFullDetailsActivity" />
         <activity android:name=".orphanage.activities.OrphanagePendingAuthRequestsActivity" />
-        <activity android:name=".HomeActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
