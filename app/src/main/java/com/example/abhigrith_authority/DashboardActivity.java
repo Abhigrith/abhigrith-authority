@@ -11,7 +11,6 @@ import com.google.android.material.tabs.TabLayout;
 
 public class DashboardActivity extends AppCompatActivity {
 
-
     TabLayout tabLayout;
     ViewPager2 pager2;
     FragmentAdapter adapter;
