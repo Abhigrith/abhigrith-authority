@@ -4,10 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/background"
     android:orientation="vertical"
     tools:context=".orphanage.activities.OrphanageFullDetailsActivity">
-
 
     <TextView
         android:layout_width="match_parent"
@@ -44,6 +43,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/border"
                     android:text="Orph_ID"
                     android:textSize="20sp"/>
 
@@ -52,6 +52,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:layout_marginStart="15dp"
+                    android:background="@drawable/border"
                     android:text="NA ORPH_ID"
                     android:textSize="20sp"/>
             </LinearLayout>
@@ -67,6 +69,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/border"
                     android:text="Name"
                     android:textSize="20sp"/>
 
@@ -75,6 +78,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:layout_marginStart="15dp"
+                    android:background="@drawable/border"
                     android:text="NA Name"
                     android:textSize="20sp"/>
             </LinearLayout>
@@ -90,6 +95,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/border"
                     android:text="Address"
                     android:textSize="20sp"
                     android:paddingEnd="-35dp"/>
@@ -98,6 +104,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:layout_marginStart="15dp"
+                    android:background="@drawable/border"
                     android:text="NA\nAddress"
                     android:textSize="20sp"/>
             </LinearLayout>
@@ -113,15 +121,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/border"
                     android:text="Location"
-                    android:textSize="20sp"
-                    android:layout_marginEnd="-40dp"/>
+                    android:layout_marginEnd="20dp"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/tv_warden_result_oprh_location"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/border"
                     android:text="NA\nLocation"
                     android:textSize="20sp"/>
             </LinearLayout>
@@ -137,6 +147,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/border"
                     android:text="Eli\nStatus"
                     android:textSize="20sp"
                     android:paddingEnd="-40dp"/>
@@ -146,6 +157,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:layout_marginStart="15dp"
+                    android:background="@drawable/border"
                     android:text="NA\nStatus"
                     android:textSize="20sp"/>
             </LinearLayout>
@@ -161,6 +174,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/border"
                     android:text="Username"
                     android:textSize="20sp"
                     android:paddingEnd="-10dp"/>
@@ -170,6 +184,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:layout_marginStart="15dp"
+                    android:background="@drawable/border"
                     android:text="NA Username"
                     android:textSize="20sp"/>
             </LinearLayout>
