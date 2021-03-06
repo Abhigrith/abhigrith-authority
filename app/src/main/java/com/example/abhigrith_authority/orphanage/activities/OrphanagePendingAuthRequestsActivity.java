@@ -1,13 +1,13 @@
 package com.example.abhigrith_authority.orphanage.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.abhigrith_authority.R;
 import com.example.abhigrith_authority.orphanage.adapters.OrphanageAuthRequestListAdapter;
@@ -19,32 +19,32 @@ import java.util.ArrayList;
 public class OrphanagePendingAuthRequestsActivity extends AppCompatActivity implements OrphanageAuthRequestListAdapter.OnOrphanageItemClickListener {
 
     private OrphanageAuthRequestListAdapter adapter;
-    private RecyclerView pendingOrphanageAuthList;
-    private ArrayList<OrphanageDetails> data = new ArrayList<OrphanageDetails>();
+    private final ArrayList<OrphanageDetails> data = new ArrayList<OrphanageDetails>();
+    private RecyclerView rv_activity_orphanage_pending_requests;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_orphanage);
 
-        pendingOrphanageAuthList = (RecyclerView) findViewById(R.id.rv_activity_orphanage_pending_requests);
+        rv_activity_orphanage_pending_requests = findViewById(R.id.rv_activity_orphanage_pending_requests);
 
         addDummyData();
 
         initRecyclerView();
 
-        Button btn_authority_warden_skip= (Button) findViewById(R.id.btn_activity_orphanage_skip);
+        Button btn_authority_warden_skip = findViewById(R.id.btn_activity_orphanage_skip);
         btn_authority_warden_skip.setOnClickListener(v -> {
             Intent intent = new Intent(this, OrphanageFullDetailsActivity.class);
             startActivity(intent);
         });
     }
 
-    void initRecyclerView(){
+    void initRecyclerView() {
         // TODO :: Adapter class can change so always check this
-        this.adapter = new OrphanageAuthRequestListAdapter(this,this,data);
-        pendingOrphanageAuthList.setLayoutManager(new LinearLayoutManager(this));
-        pendingOrphanageAuthList.setAdapter(this.adapter);
+        this.adapter = new OrphanageAuthRequestListAdapter(this, this, data);
+        rv_activity_orphanage_pending_requests.setLayoutManager(new LinearLayoutManager(this));
+        rv_activity_orphanage_pending_requests.setAdapter(this.adapter);
     }
 
     // TODO :: This function is for showcase purpose and needs to be removed

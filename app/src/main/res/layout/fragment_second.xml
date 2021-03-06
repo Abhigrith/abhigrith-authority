@@ -11,6 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        tools:listitem="@layout/list_orphanage_pending_auth_requests"></androidx.recyclerview.widget.RecyclerView>
+        tools:listitem="@layout/list_orphanage_pending_auth_requests">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </FrameLayout>
