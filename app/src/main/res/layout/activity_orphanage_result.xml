@@ -300,6 +300,7 @@
                 android:clickable="true"
                 android:elevation="4dp"
                 android:focusable="true"
+                android:background="@drawable/border"
                 app:cardCornerRadius="25dp">
 
                 <LinearLayout
@@ -338,6 +339,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
+            android:layout_marginTop="10dp"
             android:weightSum="2">
 
             <ImageButton
@@ -346,7 +348,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginEnd="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/border"
+                android:background="@drawable/rounded_corner"
                 android:src="@drawable/ic_accept" />
 
             <ImageButton
@@ -355,7 +357,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/border"
+                android:background="@drawable/rounded_corner"
                 android:src="@drawable/ic_reject" />
         </LinearLayout>
 
