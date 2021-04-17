@@ -17,10 +17,10 @@ public class FragmentAdapter extends FragmentStateAdapter {
 
         switch (position) {
             case 1:
-                return new SecondFragment();
+                return new ParentsPendingAuthRequestFragment();
         }
 
-        return new FirstFragment();
+        return new OrphanagesPendingAuthRequestFragment();
     }
 
     @Override

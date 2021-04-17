@@ -1,114 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:http="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:http="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginVertical="20dp"
     android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="20dp"
+    http:cardCornerRadius="40dp"
     http:cardElevation="30dp"
-    http:cardCornerRadius="20dp"
     http:cardPreventCornerOverlap="true">
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
+        android:layout_marginHorizontal="20sp"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2"
-            android:layout_marginTop="30dp">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_orphanage_profile_picture"
+                android:layout_width="75dp"
+                android:layout_height="100dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/orphanage"
+                android:scaleType="centerCrop" />
 
             <TextView
+                android:id="@+id/tv_name_of_orphanage"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="Orph_ID"
-                android:textSize="20sp"/>
-
-            <TextView
-                android:id="@+id/tv_orphanage_pending_auth_requests_id"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="NA ORPH_ID"
-                android:textSize="20sp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2"
-            android:layout_marginTop="20dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="Name"
-                android:textSize="20sp"/>
-
-            <TextView
-                android:id="@+id/tv_orphanage_pending_auth_requests_name"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="NA Name"
-                android:textSize="20sp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2"
-            android:layout_marginTop="20dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="Address"
-                android:textSize="20sp"
-                android:paddingEnd="-35dp"/>
-
-            <TextView
-                android:id="@+id/tv_orphanage_pending_auth_requests_address"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="NA\nAddress"
-                android:textSize="20sp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="30dp"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="Pincode"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/iv_orphanage_profile_picture"
+                android:paddingStart="10dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="10dp"
+                android:text="Name of the Orphanage"
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/tv_orphanage_pending_auth_requests_pincode"
+                android:id="@+id/tv_city_of_orphanage"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="NA\nPincode"
-                android:textSize="20sp"/>
-        </LinearLayout>
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_name_of_orphanage"
+                android:layout_toEndOf="@+id/iv_orphanage_profile_picture"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="10dp"
+                android:text="City of the Orphanage"
+                android:textSize="15sp" />
 
+            <TextView
+                android:id="@+id/tv_state_of_orphanage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_city_of_orphanage"
+                android:layout_toEndOf="@+id/iv_orphanage_profile_picture"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="10dp"
+                android:text="State of the Orphanage"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

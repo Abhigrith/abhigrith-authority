@@ -1,85 +1,62 @@
 package com.example.abhigrith_authority.parent.adapters;
 
-import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.abhigrith_authority.R;
-import com.example.abhigrith_authority.parent.models.IndividualParentDetails;
-import com.example.abhigrith_authority.parent.models.ParentsDetails;
+import com.example.abhigrith_authority.databinding.ListParentPendingAuthRequestsBinding;
+import com.example.abhigrith_authority.parent.models.ParentsDetailModel;
+import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
-import java.util.ArrayList;
+public class ParentAuthRequestListAdapter extends FirestoreRecyclerAdapter<ParentsDetailModel, ParentAuthRequestListAdapter.ParentViewHolder> {
 
-public class ParentAuthRequestListAdapter extends RecyclerView.Adapter<ParentAuthRequestListAdapter.ParentViewHolder> {
-    private Context context;
-    private OnParentItemClickListener onParentItemClickListener;
-    private ArrayList<ParentsDetails> pendingParentAuthLists;
+    private static final String TAG = "ParentAdapter";
 
-    public ParentAuthRequestListAdapter(Context context, OnParentItemClickListener onParentItemClickListener, ArrayList<ParentsDetails> pendingParentAuthLists){
-        this.context = context;
-        this.onParentItemClickListener = onParentItemClickListener;
-        this.pendingParentAuthLists = pendingParentAuthLists;
+    private FirestoreRecyclerOptions<ParentsDetailModel> options;
+
+    public ParentAuthRequestListAdapter(@NonNull FirestoreRecyclerOptions<ParentsDetailModel> options) {
+        super(options);
+        this.options = options;
     }
 
-    public static class ParentViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        public TextView name;
-        public TextView age;
-        public TextView address;
-        OnParentItemClickListener onParentItemClickListener;
+    public static class ParentViewHolder extends RecyclerView.ViewHolder {
+        private ListParentPendingAuthRequestsBinding binding;
 
-        public ParentViewHolder(@NonNull View itemView,OnParentItemClickListener onParentItemClickListener) {
-            super(itemView);
-            this.name = itemView.findViewById(R.id.tv_parent_pending_auth_requests_name);
-            this.address = itemView.findViewById(R.id.tv_parent_pending_auth_requests_address);
-            this.age = itemView.findViewById(R.id.tv_parent_pending_auth_requests_age);
-            this.onParentItemClickListener = onParentItemClickListener;
-
-            itemView.setOnClickListener(this);
+        public ParentViewHolder(@NonNull ListParentPendingAuthRequestsBinding binding) {
+            super(binding.getRoot());
+            this.binding = binding;
         }
 
-        // TODO :: Will write logic to bind views here
-        void bindData(ParentsDetails parentsDetails){
-            IndividualParentDetails parent = parentsDetails.getFirstParent();
-            name.setText(parent.getFirstNameOfParent());
-            address.setText(parentsDetails.getDetailedHomeAddress());
-            age.setText(String.valueOf(parent.getAgeOfParent()));
-        }
-
-        @Override
-        public void onClick(View v) {
-            // TODO :: This will be implemented afterwards
-            Log.d("Adapter Position", "onClick: " + getAdapterPosition());
-            onParentItemClickListener.onItemClick(getAdapterPosition());
-            // onParentItemClickListener.onItemsClick();
+        public void bindOrphanageItem(ParentsDetailModel model) {
+            Log.d(TAG, model.toString());
+            binding.tvParentPendingAuthRequestsName.setText(binding.getRoot().getContext().getString(R.string.name_of_parents,model.getFirstParent().getFullName(),model.getSecondParent().getFullName()));
+            binding.tvParentPendingAuthRequestsDob.setText(binding.getRoot().getContext().getString(R.string.dob_of_parents,model.getFirstParent().getDateOfBirth(),model.getSecondParent().getDateOfBirth()));
+            binding.tvParentPendingAuthRequestsCity.setText(binding.getRoot().getContext().getString(R.string.city_of_parents,model.getAddress().getCity()));
+            binding.tvParentPendingAuthRequestsDistrict.setText(binding.getRoot().getContext().getString(R.string.district_of_parents,model.getAddress().getDistrict()));
+            binding.tvParentPendingAuthRequestsPincode.setText(binding.getRoot().getContext().getString(R.string.pincode_of_parents,model.getAddress().getPincode()));
+            binding.tvParentPendingAuthRequestsState.setText(binding.getRoot().getContext().getString(R.string.state_of_parents,model.getAddress().getState()));
         }
     }
 
     @NonNull
     @Override
     public ParentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_parents_pending_auth_requests,parent,false);
-        return new ParentViewHolder(view,this.onParentItemClickListener);
+        ListParentPendingAuthRequestsBinding binding = ListParentPendingAuthRequestsBinding.inflate(LayoutInflater.from(parent.getContext()),parent,false);
+        return new ParentViewHolder(binding);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ParentViewHolder holder, int position) {
-        holder.bindData(pendingParentAuthLists.get(position));
+    protected void onBindViewHolder(@NonNull ParentViewHolder holder, int position, @NonNull ParentsDetailModel model) {
+        holder.bindOrphanageItem(model);
     }
 
     @Override
     public int getItemCount() {
-        return pendingParentAuthLists.size();
-    }
-
-    public interface OnParentItemClickListener {
-        // TODO :: Only 1 will be implemnted of either of the two
-        void onItemClick(int position);
-        void onItemsClick(ParentsDetails parentsDetails);
+        return this.options.getSnapshots().size();
     }
 }

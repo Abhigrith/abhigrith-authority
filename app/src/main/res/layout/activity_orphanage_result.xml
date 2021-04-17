@@ -297,10 +297,10 @@
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:background="@drawable/border"
                 android:clickable="true"
                 android:elevation="4dp"
                 android:focusable="true"
+                android:background="@drawable/border"
                 app:cardCornerRadius="25dp">
 
                 <LinearLayout
@@ -338,8 +338,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
             android:orientation="horizontal"
+            android:layout_marginTop="10dp"
             android:weightSum="2">
 
             <ImageButton

@@ -27,8 +27,8 @@ public class DashboardActivity extends AppCompatActivity {
         adapter = new FragmentAdapter(fm, getLifecycle());
         pager2.setAdapter(adapter);
 
-        tabLayout.addTab(tabLayout.newTab().setText("Orphanage"));
-        tabLayout.addTab(tabLayout.newTab().setText("Parent"));
+        tabLayout.addTab(tabLayout.newTab().setText("Orphanages"));
+        tabLayout.addTab(tabLayout.newTab().setText("Parents"));
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
