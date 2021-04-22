@@ -1,12 +1,12 @@
 package com.example.abhigrith_authority.enums;
 
-public enum OrphanageListingStatus {
+public enum ParentListingStatus {
 
     ACCEPTED("Accepted"), PENDING("Pending"), REJECTED("Rejected");
 
     private String orphangeListingStatus;
 
-    OrphanageListingStatus(String orphangeListingStatus) {
+    ParentListingStatus(String orphangeListingStatus) {
         this.orphangeListingStatus = orphangeListingStatus;
     }
 

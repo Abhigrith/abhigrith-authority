@@ -6,12 +6,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavDirections;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.abhigrith_authority.databinding.FragmentOrphanagePendingAuthRequestBinding;
-import com.example.abhigrith_authority.enums.OrphanageListingStatus;
+import com.example.abhigrith_authority.enums.ParentListingStatus;
+import com.example.abhigrith_authority.interfaces.OnOrphanageListItemClickListener;
 import com.example.abhigrith_authority.orphanage.adapters.OrphanageAuthRequestsListAdapter;
 import com.example.abhigrith_authority.orphanage.models.OrphanageModel;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
@@ -25,7 +29,7 @@ import org.jetbrains.annotations.NotNull;
  * Use the {@link OrphanagesPendingAuthRequestFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class OrphanagesPendingAuthRequestFragment extends Fragment {
+public class OrphanagesPendingAuthRequestFragment extends Fragment implements OnOrphanageListItemClickListener {
 
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -34,16 +38,14 @@ public class OrphanagesPendingAuthRequestFragment extends Fragment {
     private static final String TAG = "OrphanageAuthList";
     private static final String ORPHANAGE_COLLECTION_PATH = "orphanage_info";
     private static final String ORPHANAGE_STATUS_FIELD = "orphanageListingStatus";
-    // private static final String ORPHANAGE_DOCUMENT_NAME = "ORPHANAGE_DOCUMENT_NAME";
-    // private static final String ORPHANAGE_NAME_FIELD = "orphanageName";
 
     private String mParam1;
     private String mParam2;
 
-    private FragmentOrphanagePendingAuthRequestBinding binding;
     private FirebaseFirestore firestore;
     private FirestoreRecyclerOptions<OrphanageModel> options;
     private OrphanageAuthRequestsListAdapter adapter;
+    private FragmentOrphanagePendingAuthRequestBinding binding;
 
     public OrphanagesPendingAuthRequestFragment() {
         // Required empty public constructor
@@ -82,7 +84,7 @@ public class OrphanagesPendingAuthRequestFragment extends Fragment {
 
         firestore = FirebaseFirestore.getInstance();
 
-        Query query = firestore.collection(ORPHANAGE_COLLECTION_PATH).whereEqualTo(ORPHANAGE_STATUS_FIELD, OrphanageListingStatus.PENDING.getOrphangeListingStatus());
+        Query query = firestore.collection(ORPHANAGE_COLLECTION_PATH).whereEqualTo(ORPHANAGE_STATUS_FIELD, ParentListingStatus.PENDING.getOrphangeListingStatus());
         Log.d(TAG, "This is " + query.toString());
 
         options = new FirestoreRecyclerOptions.Builder<OrphanageModel>()
@@ -95,10 +97,10 @@ public class OrphanagesPendingAuthRequestFragment extends Fragment {
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
-        // Setting up Adapter
+        // Setting up Adapter and RecyclerView
         setupOrphanageList();
     }
 
@@ -121,10 +123,15 @@ public class OrphanagesPendingAuthRequestFragment extends Fragment {
     }
 
     private void setupOrphanageList(){
-        // TODO :: Adapter class can change so always check this
-        this.adapter = new OrphanageAuthRequestsListAdapter(options);
+        this.adapter = new OrphanageAuthRequestsListAdapter(this,options);
 
         binding.rvFragmentOrphanagePendingAuthRequests.setLayoutManager(new LinearLayoutManager(getActivity()));
         binding.rvFragmentOrphanagePendingAuthRequests.setAdapter(this.adapter);
+    }
+
+    @Override
+    public void onItemClick(OrphanageModel model) {
+        NavDirections action = OrphanagesPendingAuthRequestFragmentDirections.actionOrphanagesPendingAuthRequestFragmentToOrphanageFullDetailFragment(model);
+        NavHostFragment.findNavController(this).navigate(action);
     }
 }

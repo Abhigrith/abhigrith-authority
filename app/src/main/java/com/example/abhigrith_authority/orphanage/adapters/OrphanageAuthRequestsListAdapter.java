@@ -2,12 +2,14 @@ package com.example.abhigrith_authority.orphanage.adapters;
 
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.abhigrith_authority.databinding.ListOrphanagePendingAuthRequestsBinding;
+import com.example.abhigrith_authority.interfaces.OnOrphanageListItemClickListener;
 import com.example.abhigrith_authority.orphanage.models.OrphanageModel;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
@@ -17,22 +19,26 @@ public class OrphanageAuthRequestsListAdapter extends FirestoreRecyclerAdapter<O
     private static final String TAG = "OrphanageAdapter";
 
     private FirestoreRecyclerOptions<OrphanageModel> options;
-    // private OnListItemClickListener onListItemClickListener;
-    // private OnDocumentCheckListener onDocumentCheckListener;
+    private OnOrphanageListItemClickListener onOrphanageListItemClickListener;
 
-    public OrphanageAuthRequestsListAdapter(@NonNull FirestoreRecyclerOptions<OrphanageModel> options) {
+    public OrphanageAuthRequestsListAdapter(OnOrphanageListItemClickListener onOrphanageListItemClickListener, @NonNull FirestoreRecyclerOptions<OrphanageModel> options) {
         super(options);
-        // this.onListItemClickListener = onListItemClickListener;
-        // this.onDocumentCheckListener = onDocumentCheckListener;
+        this.onOrphanageListItemClickListener = onOrphanageListItemClickListener;
         this.options = options;
     }
 
-    public static class OrphanageViewHolder extends RecyclerView.ViewHolder {
+    public class OrphanageViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private ListOrphanagePendingAuthRequestsBinding binding;
 
         public OrphanageViewHolder(@NonNull ListOrphanagePendingAuthRequestsBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            onOrphanageListItemClickListener.onItemClick(getItem(getAbsoluteAdapterPosition()));
         }
 
         public void bindOrphanageItem(OrphanageModel model) {

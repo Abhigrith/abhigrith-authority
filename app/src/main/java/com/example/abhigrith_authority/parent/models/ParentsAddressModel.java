@@ -1,6 +1,9 @@
 package com.example.abhigrith_authority.parent.models;
 
-public class ParentsAddressModel {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class ParentsAddressModel implements Parcelable {
 
     private String primaryAddress;
     private String secondaryAddress;
@@ -20,6 +23,54 @@ public class ParentsAddressModel {
         this.district = district;
         this.pincode = pincode;
         this.state = state;
+    }
+
+    protected ParentsAddressModel(Parcel in) {
+        primaryAddress = in.readString();
+        secondaryAddress = in.readString();
+        city = in.readString();
+        district = in.readString();
+        pincode = in.readString();
+        state = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(primaryAddress);
+        dest.writeString(secondaryAddress);
+        dest.writeString(city);
+        dest.writeString(district);
+        dest.writeString(pincode);
+        dest.writeString(state);
+    }
+
+    public static final Creator<ParentsAddressModel> CREATOR = new Creator<ParentsAddressModel>() {
+        @Override
+        public ParentsAddressModel createFromParcel(Parcel in) {
+            return new ParentsAddressModel(in);
+        }
+
+        @Override
+        public ParentsAddressModel[] newArray(int size) {
+            return new ParentsAddressModel[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public String toString() {
+        return "ParentsAddressModel{" +
+                "primaryAddress='" + primaryAddress + '\'' +
+                ", secondaryAddress='" + secondaryAddress + '\'' +
+                ", city='" + city + '\'' +
+                ", district='" + district + '\'' +
+                ", pincode='" + pincode + '\'' +
+                ", state='" + state + '\'' +
+                '}';
     }
 
     public String getPrimaryAddress() {

@@ -6,13 +6,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavDirections;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.abhigrith_authority.databinding.FragmentParentPendingAuthRequestBinding;
-import com.example.abhigrith_authority.enums.OrphanageListingStatus;
 import com.example.abhigrith_authority.enums.ParentAdoptionRequestStatus;
+import com.example.abhigrith_authority.interfaces.OnParentListItemClickListener;
 import com.example.abhigrith_authority.parent.adapters.ParentAuthRequestListAdapter;
 import com.example.abhigrith_authority.parent.models.ParentsDetailModel;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
@@ -26,7 +30,7 @@ import org.jetbrains.annotations.NotNull;
  * Use the {@link ParentsPendingAuthRequestFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ParentsPendingAuthRequestFragment extends Fragment {
+public class ParentsPendingAuthRequestFragment extends Fragment implements OnParentListItemClickListener {
 
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -96,11 +100,11 @@ public class ParentsPendingAuthRequestFragment extends Fragment {
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
-        // Setting up Adapter
-        setupOrphanageList();
+        // Setting up Adapter and RecyclerView
+        setupParentList();
     }
 
     @Override
@@ -121,11 +125,16 @@ public class ParentsPendingAuthRequestFragment extends Fragment {
         binding = null;
     }
 
-    private void setupOrphanageList(){
-        // TODO :: Adapter class can change so always check this
-        this.adapter = new ParentAuthRequestListAdapter(options);
+    private void setupParentList(){
+        this.adapter = new ParentAuthRequestListAdapter(this, options);
 
         binding.rvFragmentParentPendingAuthRequests.setLayoutManager(new LinearLayoutManager(getActivity()));
         binding.rvFragmentParentPendingAuthRequests.setAdapter(this.adapter);
+    }
+
+    @Override
+    public void onItemClick(ParentsDetailModel model) {
+        NavDirections action = ParentsPendingAuthRequestFragmentDirections.actionParentsPendingAuthRequestFragmentToParentFullDetailFragment(model);
+        NavHostFragment.findNavController(this).navigate(action);
     }
 }

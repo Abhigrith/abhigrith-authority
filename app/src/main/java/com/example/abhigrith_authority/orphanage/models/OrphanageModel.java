@@ -1,8 +1,11 @@
 package com.example.abhigrith_authority.orphanage.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import org.jetbrains.annotations.NotNull;
 
-public class OrphanageModel {
+public class OrphanageModel implements Parcelable {
 
     private String orphanageId;
     private String orphanageName;
@@ -29,8 +32,48 @@ public class OrphanageModel {
         this.orphanageListingStatus = orphanageListingStatus;
     }
 
+    protected OrphanageModel(Parcel in) {
+        orphanageId = in.readString();
+        orphanageName = in.readString();
+        orphanageAddress = in.readParcelable(OrphanageAddressModel.class.getClassLoader());
+        orphanagePrimaryPhoneNumber = in.readString();
+        orphanageSecondaryPhoneNumber = in.readString();
+        orphanageEmail = in.readString();
+        orphanagePassword = in.readString();
+        orphanageListingStatus = in.readString();
+    }
+
     @Override
-    public @NotNull String toString() {
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(orphanageId);
+        dest.writeString(orphanageName);
+        dest.writeParcelable(orphanageAddress, flags);
+        dest.writeString(orphanagePrimaryPhoneNumber);
+        dest.writeString(orphanageSecondaryPhoneNumber);
+        dest.writeString(orphanageEmail);
+        dest.writeString(orphanagePassword);
+        dest.writeString(orphanageListingStatus);
+    }
+
+    public static final Creator<OrphanageModel> CREATOR = new Creator<OrphanageModel>() {
+        @Override
+        public OrphanageModel createFromParcel(Parcel in) {
+            return new OrphanageModel(in);
+        }
+
+        @Override
+        public OrphanageModel[] newArray(int size) {
+            return new OrphanageModel[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public String toString() {
         return "OrphanageModel{" +
                 "orphanageId='" + orphanageId + '\'' +
                 ", orphanageName='" + orphanageName + '\'' +

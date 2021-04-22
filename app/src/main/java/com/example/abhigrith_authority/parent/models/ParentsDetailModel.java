@@ -1,6 +1,9 @@
 package com.example.abhigrith_authority.parent.models;
 
-public class ParentsDetailModel {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class ParentsDetailModel implements Parcelable {
 
     // Properties of model class
     private ParentIndividualModel firstParent;
@@ -25,6 +28,60 @@ public class ParentsDetailModel {
         this.emailAddress = emailAddress;
         this.password = password;
         this.adoptionRequestStatus = adoptionRequestStatus;
+    }
+
+    protected ParentsDetailModel(Parcel in) {
+        firstParent = in.readParcelable(ParentIndividualModel.class.getClassLoader());
+        secondParent = in.readParcelable(ParentIndividualModel.class.getClassLoader());
+        address = in.readParcelable(ParentsAddressModel.class.getClassLoader());
+        primaryContactNumber = in.readString();
+        secondaryContactNumber = in.readString();
+        emailAddress = in.readString();
+        password = in.readString();
+        adoptionRequestStatus = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeParcelable(firstParent, flags);
+        dest.writeParcelable(secondParent, flags);
+        dest.writeParcelable(address, flags);
+        dest.writeString(primaryContactNumber);
+        dest.writeString(secondaryContactNumber);
+        dest.writeString(emailAddress);
+        dest.writeString(password);
+        dest.writeString(adoptionRequestStatus);
+    }
+
+    public static final Creator<ParentsDetailModel> CREATOR = new Creator<ParentsDetailModel>() {
+        @Override
+        public ParentsDetailModel createFromParcel(Parcel in) {
+            return new ParentsDetailModel(in);
+        }
+
+        @Override
+        public ParentsDetailModel[] newArray(int size) {
+            return new ParentsDetailModel[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public String toString() {
+        return "ParentsDetailModel{" +
+                "firstParent=" + firstParent +
+                ", secondParent=" + secondParent +
+                ", address=" + address +
+                ", primaryContactNumber='" + primaryContactNumber + '\'' +
+                ", secondaryContactNumber='" + secondaryContactNumber + '\'' +
+                ", emailAddress='" + emailAddress + '\'' +
+                ", password='" + password + '\'' +
+                ", adoptionRequestStatus='" + adoptionRequestStatus + '\'' +
+                '}';
     }
 
     public ParentIndividualModel getFirstParent() {

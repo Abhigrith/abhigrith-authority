@@ -1,6 +1,9 @@
 package com.example.abhigrith_authority.parent.models;
 
-public class ParentIndividualModel {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class ParentIndividualModel implements Parcelable {
 
     // Properties of model class
     private String fullName;
@@ -23,6 +26,54 @@ public class ParentIndividualModel {
         this.income = income;
         this.aadhaarCardNumber = aadhaarCardNumber;
         this.panCardNumber = panCardNumber;
+    }
+
+    protected ParentIndividualModel(Parcel in) {
+        fullName = in.readString();
+        gender = in.readString();
+        dateOfBirth = in.readString();
+        income = in.readFloat();
+        aadhaarCardNumber = in.readString();
+        panCardNumber = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(fullName);
+        dest.writeString(gender);
+        dest.writeString(dateOfBirth);
+        dest.writeFloat(income);
+        dest.writeString(aadhaarCardNumber);
+        dest.writeString(panCardNumber);
+    }
+
+    public static final Creator<ParentIndividualModel> CREATOR = new Creator<ParentIndividualModel>() {
+        @Override
+        public ParentIndividualModel createFromParcel(Parcel in) {
+            return new ParentIndividualModel(in);
+        }
+
+        @Override
+        public ParentIndividualModel[] newArray(int size) {
+            return new ParentIndividualModel[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public String toString() {
+        return "ParentIndividualModel{" +
+                "fullName='" + fullName + '\'' +
+                ", gender='" + gender + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", income=" + income +
+                ", aadhaarCardNumber='" + aadhaarCardNumber + '\'' +
+                ", panCardNumber='" + panCardNumber + '\'' +
+                '}';
     }
 
     public String getFullName() {

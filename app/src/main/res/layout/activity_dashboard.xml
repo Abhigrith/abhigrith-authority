@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -30,13 +31,39 @@
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar" />
+        android:layout_below="@+id/toolbar">
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/view_pager2"
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/orphanage_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Orphanages" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/parent_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Parents" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/app_start"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/tab_layout" />
+        android:layout_below="@id/tab_layout"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/orphanage_navigation"
+        />
 
+<!--    <androidx.viewpager2.widget.ViewPager2-->
+<!--        android:id="@+id/view_pager2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_below="@id/tab_layout" />-->
 
 </RelativeLayout>
+
+
+

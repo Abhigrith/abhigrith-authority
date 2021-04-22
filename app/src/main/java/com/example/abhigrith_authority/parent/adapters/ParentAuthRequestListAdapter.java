@@ -2,6 +2,7 @@ package com.example.abhigrith_authority.parent.adapters;
 
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.abhigrith_authority.R;
 import com.example.abhigrith_authority.databinding.ListParentPendingAuthRequestsBinding;
+import com.example.abhigrith_authority.interfaces.OnParentListItemClickListener;
 import com.example.abhigrith_authority.parent.models.ParentsDetailModel;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
@@ -17,19 +19,27 @@ public class ParentAuthRequestListAdapter extends FirestoreRecyclerAdapter<Paren
 
     private static final String TAG = "ParentAdapter";
 
+    private OnParentListItemClickListener onParentListItemClickListener;
     private FirestoreRecyclerOptions<ParentsDetailModel> options;
 
-    public ParentAuthRequestListAdapter(@NonNull FirestoreRecyclerOptions<ParentsDetailModel> options) {
+    public ParentAuthRequestListAdapter(OnParentListItemClickListener onParentListItemClickListener, @NonNull FirestoreRecyclerOptions<ParentsDetailModel> options) {
         super(options);
+        this.onParentListItemClickListener = onParentListItemClickListener;
         this.options = options;
     }
 
-    public static class ParentViewHolder extends RecyclerView.ViewHolder {
+    public class ParentViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private ListParentPendingAuthRequestsBinding binding;
 
         public ParentViewHolder(@NonNull ListParentPendingAuthRequestsBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            onParentListItemClickListener.onItemClick(getItem(getAbsoluteAdapterPosition()));
         }
 
         public void bindOrphanageItem(ParentsDetailModel model) {

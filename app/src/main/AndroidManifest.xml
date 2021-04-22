@@ -12,8 +12,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Abhigrithauthority">
-        <activity android:name=".parent.activities.ParentFullDetailsActivity" />
-        <activity android:name=".orphanage.activities.OrphanageFullDetailsActivity" />
         <activity android:name=".DashboardActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
