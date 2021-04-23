@@ -19,8 +19,8 @@ public class ParentAuthRequestListAdapter extends FirestoreRecyclerAdapter<Paren
 
     private static final String TAG = "ParentAdapter";
 
-    private OnParentListItemClickListener onParentListItemClickListener;
-    private FirestoreRecyclerOptions<ParentsDetailModel> options;
+    private final OnParentListItemClickListener onParentListItemClickListener;
+    private final FirestoreRecyclerOptions<ParentsDetailModel> options;
 
     public ParentAuthRequestListAdapter(OnParentListItemClickListener onParentListItemClickListener, @NonNull FirestoreRecyclerOptions<ParentsDetailModel> options) {
         super(options);
@@ -29,7 +29,7 @@ public class ParentAuthRequestListAdapter extends FirestoreRecyclerAdapter<Paren
     }
 
     public class ParentViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        private ListParentPendingAuthRequestsBinding binding;
+        private final ListParentPendingAuthRequestsBinding binding;
 
         public ParentViewHolder(@NonNull ListParentPendingAuthRequestsBinding binding) {
             super(binding.getRoot());
@@ -44,12 +44,12 @@ public class ParentAuthRequestListAdapter extends FirestoreRecyclerAdapter<Paren
 
         public void bindOrphanageItem(ParentsDetailModel model) {
             Log.d(TAG, model.toString());
-            binding.tvParentPendingAuthRequestsName.setText(binding.getRoot().getContext().getString(R.string.name_of_parents,model.getFirstParent().getFullName(),model.getSecondParent().getFullName()));
-            binding.tvParentPendingAuthRequestsDob.setText(binding.getRoot().getContext().getString(R.string.dob_of_parents,model.getFirstParent().getDateOfBirth(),model.getSecondParent().getDateOfBirth()));
-            binding.tvParentPendingAuthRequestsCity.setText(binding.getRoot().getContext().getString(R.string.city_of_parents,model.getAddress().getCity()));
-            binding.tvParentPendingAuthRequestsDistrict.setText(binding.getRoot().getContext().getString(R.string.district_of_parents,model.getAddress().getDistrict()));
-            binding.tvParentPendingAuthRequestsPincode.setText(binding.getRoot().getContext().getString(R.string.pincode_of_parents,model.getAddress().getPincode()));
-            binding.tvParentPendingAuthRequestsState.setText(binding.getRoot().getContext().getString(R.string.state_of_parents,model.getAddress().getState()));
+            binding.tvParentPendingAuthRequestsName.setText(binding.getRoot().getContext().getString(R.string.name_of_parents, model.getFirstParent().getFullName(), model.getSecondParent().getFullName()));
+            binding.tvParentPendingAuthRequestsDob.setText(binding.getRoot().getContext().getString(R.string.dob_of_parents, model.getFirstParent().getDateOfBirth(), model.getSecondParent().getDateOfBirth()));
+//            binding.tvParentPendingAuthRequestsCity.setText(binding.getRoot().getContext().getString(R.string.city_of_parents,model.getAddress().getCity()));
+//            binding.tvParentPendingAuthRequestsDistrict.setText(binding.getRoot().getContext().getString(R.string.district_of_parents,model.getAddress().getDistrict()));
+//            binding.tvParentPendingAuthRequestsPincode.setText(binding.getRoot().getContext().getString(R.string.pincode_of_parents,model.getAddress().getPincode()));
+//            binding.tvParentPendingAuthRequestsState.setText(binding.getRoot().getContext().getString(R.string.state_of_parents,model.getAddress().getState()));
         }
     }
 

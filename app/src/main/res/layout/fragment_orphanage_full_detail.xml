@@ -84,8 +84,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:textColor="@android:color/holo_red_light"
-                        android:textSize="28sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         tools:text="--" />
                 </LinearLayout>
@@ -121,8 +120,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:textColor="@android:color/holo_purple"
-                        android:textSize="28sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         tools:text="--" />
 
@@ -164,8 +162,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:textColor="@android:color/holo_red_light"
-                        android:textSize="28sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         tools:text="--" />
                 </LinearLayout>
@@ -201,8 +198,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:textColor="@android:color/holo_purple"
-                        android:textSize="28sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         tools:text="--" />
 
@@ -244,8 +240,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:textColor="@android:color/holo_red_light"
-                        android:textSize="28sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         tools:text="--" />
                 </LinearLayout>
@@ -281,8 +276,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:textColor="@android:color/holo_purple"
-                        android:textSize="28sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         tools:text="--" />
                 </LinearLayout>
@@ -325,8 +319,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:textColor="@android:color/holo_red_light"
-                        android:textSize="28sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         tools:text="--" />
 
@@ -363,8 +356,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:textColor="@android:color/holo_purple"
-                        android:textSize="28sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         tools:text="--" />
 
@@ -407,8 +399,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:textAlignment="center"
-                    android:textColor="@android:color/holo_purple"
-                    android:textSize="28sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     tools:text="--" />
 
@@ -445,8 +436,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:textAlignment="center"
-                    android:textColor="@android:color/holo_purple"
-                    android:textSize="28sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     tools:text="--" />
             </LinearLayout>
@@ -476,7 +466,7 @@
                 android:layout_marginEnd="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/rounded_corner"
-                android:src="@drawable/ic_accept" />
+                android:src="@drawable/ic_pending" />
 
             <ImageButton
                 android:id="@+id/ib_orphanage_rejected"

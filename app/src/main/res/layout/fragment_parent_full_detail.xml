@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/background">
 
     <LinearLayout
@@ -24,29 +24,29 @@
                 android:layout_margin="10dp"
                 android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:gravity="center"
-                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/iv_parent_profile_picture_male"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:scaleType="centerCrop"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/male_child_profile" />
+                    <ImageView
+                        android:id="@+id/iv_parent_profile_picture_male"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/male_child_profile" />
 
-                <ImageView
-                    android:id="@+id/iv_parent_profile_picture_female"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:scaleType="centerCrop"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/female_child_profile" />
-            </LinearLayout>
+                    <ImageView
+                        android:id="@+id/iv_parent_profile_picture_female"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/female_child_profile" />
+                </LinearLayout>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -63,7 +63,7 @@
                     android:text="----------------"
                     android:textAlignment="center"
                     android:textAllCaps="true"
-                    android:textSize="28sp" />
+                    android:textSize="24sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -104,8 +104,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:textColor="@android:color/holo_purple"
-                        android:textSize="28sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         tools:text="--" />
                 </LinearLayout>
@@ -140,8 +139,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:textColor="@android:color/holo_purple"
-                        android:textSize="28sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         tools:text="--" />
 
@@ -186,8 +184,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:textColor="@android:color/holo_purple"
-                        android:textSize="28sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         tools:text="--" />
                 </LinearLayout>
@@ -222,8 +219,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:textColor="@android:color/holo_purple"
-                        android:textSize="28sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         tools:text="--" />
 
@@ -268,8 +264,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:textColor="@android:color/holo_purple"
-                        android:textSize="28sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         tools:text="--" />
                 </LinearLayout>
@@ -304,8 +299,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:textColor="@android:color/holo_purple"
-                        android:textSize="28sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         tools:text="--" />
 
@@ -350,8 +344,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:textColor="@android:color/holo_purple"
-                        android:textSize="28sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         tools:text="--" />
                 </LinearLayout>
@@ -386,8 +379,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:textColor="@android:color/holo_purple"
-                        android:textSize="28sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         tools:text="--" />
 
@@ -429,8 +421,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:textColor="@android:color/holo_red_light"
-                        android:textSize="28sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         tools:text="--" />
                 </LinearLayout>
@@ -457,7 +448,7 @@
                         android:layout_gravity="center_horizontal"
                         android:text="Parent's\nSecondary Phone"
                         android:textAlignment="center"
-                        android:textSize="18sp"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -466,8 +457,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:textColor="@android:color/holo_purple"
-                        android:textSize="28sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         tools:text="--" />
 
@@ -509,8 +499,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:textColor="@android:color/holo_red_light"
-                        android:textSize="28sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         tools:text="--" />
                 </LinearLayout>
@@ -537,7 +526,7 @@
                         android:layout_gravity="center_horizontal"
                         android:text="Parent's\nSecondary Address"
                         android:textAlignment="center"
-                        android:textSize="18sp"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -546,8 +535,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:textColor="@android:color/holo_purple"
-                        android:textSize="28sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         tools:text="--" />
 
@@ -589,8 +577,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:textColor="@android:color/holo_red_light"
-                        android:textSize="28sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         tools:text="--" />
                 </LinearLayout>
@@ -626,8 +613,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:textColor="@android:color/holo_purple"
-                        android:textSize="28sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         tools:text="--" />
 
@@ -669,8 +655,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:textColor="@android:color/holo_red_light"
-                        android:textSize="28sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         tools:text="--" />
                 </LinearLayout>
@@ -706,8 +691,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:textColor="@android:color/holo_purple"
-                        android:textSize="28sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         tools:text="--" />
                 </LinearLayout>
@@ -751,8 +735,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:textAlignment="center"
-                    android:textColor="@android:color/holo_purple"
-                    android:textSize="28sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     tools:text="--" />
 
@@ -790,8 +773,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="12dp"
-                    android:textColor="@android:color/holo_purple"
-                    android:textSize="28sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     tools:text="--" />
             </LinearLayout>
@@ -800,8 +782,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
             android:layout_marginTop="10dp"
+            android:orientation="horizontal"
             android:weightSum="3">
 
             <ImageButton
@@ -820,7 +802,7 @@
                 android:layout_marginEnd="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/rounded_corner"
-                android:src="@drawable/ic_accept" />
+                android:src="@drawable/ic_pending" />
 
             <ImageButton
                 android:id="@+id/ib_parent_rejected"
