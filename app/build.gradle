@@ -38,13 +38,14 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'org.jetbrains:annotations:20.1.0'
     implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
 
     // RecyclerView Dependency
     implementation "androidx.recyclerview:recyclerview:1.2.0"
     // ViewPager2 Dependency
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
     // Fragment Dependnecy
-    implementation "androidx.fragment:fragment:1.3.2"
+    implementation "androidx.fragment:fragment:1.3.3"
 
     // Import the BoM for the Firebase platform
     implementation platform('com.google.firebase:firebase-bom:27.0.0')

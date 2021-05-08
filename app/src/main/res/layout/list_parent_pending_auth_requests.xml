@@ -50,48 +50,37 @@
                 android:text="Both Parents DOB"
                 android:textSize="15sp" />
 
-            <!--            <TextView-->
-            <!--                android:id="@+id/tv_parent_pending_auth_requests_city"-->
-            <!--                android:layout_width="wrap_content"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:paddingStart="10dp"-->
-            <!--                android:paddingEnd="10dp"-->
-            <!--                android:layout_below="@+id/tv_parent_pending_auth_requests_dob"-->
-            <!--                android:layout_toEndOf="@+id/iv_orphanage_profile_picture"-->
-            <!--                android:text="City"-->
-            <!--                android:textSize="20sp" />-->
-
-            <!--            <TextView-->
-            <!--                android:id="@+id/tv_parent_pending_auth_requests_district"-->
-            <!--                android:layout_width="wrap_content"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:paddingStart="10dp"-->
-            <!--                android:paddingEnd="10dp"-->
-            <!--                android:layout_below="@+id/tv_parent_pending_auth_requests_city"-->
-            <!--                android:layout_toEndOf="@+id/iv_orphanage_profile_picture"-->
-            <!--                android:text="District"-->
-            <!--                android:textSize="20sp" />-->
-
-            <!--            <TextView-->
-            <!--                android:id="@+id/tv_parent_pending_auth_requests_pincode"-->
-            <!--                android:layout_width="wrap_content"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:paddingStart="10dp"-->
-            <!--                android:paddingEnd="10dp"-->
-            <!--                android:layout_below="@+id/tv_parent_pending_auth_requests_district"-->
-            <!--                android:layout_toEndOf="@+id/iv_orphanage_profile_picture"-->
-            <!--                android:text="Pincode"-->
-            <!--                android:textSize="20sp" />-->
-
             <TextView
-                android:id="@+id/tv_parent_pending_auth_requests_state"
+                android:id="@+id/tv_parent_pending_auth_requests_city"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_parent_pending_auth_requests_dob"
                 android:layout_toEndOf="@+id/iv_orphanage_profile_picture"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
-                android:text="State"
+                android:text="City"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_parent_pending_auth_requests_pincode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_parent_pending_auth_requests_city"
+                android:layout_toEndOf="@+id/iv_orphanage_profile_picture"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="Pincode"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_parent_pending_auth_requests_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_parent_pending_auth_requests_pincode"
+                android:layout_toEndOf="@+id/iv_orphanage_profile_picture"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="Pincode"
                 android:textSize="15sp" />
         </RelativeLayout>
     </LinearLayout>

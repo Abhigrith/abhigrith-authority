@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.abhigrith_authority.R;
 import com.example.abhigrith_authority.databinding.ListOrphanagePendingAuthRequestsBinding;
 import com.example.abhigrith_authority.interfaces.OnOrphanageListItemClickListener;
 import com.example.abhigrith_authority.orphanage.models.OrphanageModel;
@@ -43,16 +44,17 @@ public class OrphanageAuthRequestsListAdapter extends FirestoreRecyclerAdapter<O
 
         public void bindOrphanageItem(OrphanageModel model) {
             Log.d(TAG, model.toString());
-            binding.tvNameOfOrphanage.setText(model.getOrphanageName());
-            binding.tvCityOfOrphanage.setText(model.getOrphanageAddress().getCity());
-            binding.tvStateOfOrphanage.setText(model.getOrphanageAddress().getState());
+            binding.tvNameOfOrphanage.setText(itemView.getContext().getString(R.string.name_of_orphanage, model.getOrphanageName()));
+            binding.tvCityOfOrphanage.setText(itemView.getContext().getString(R.string.city_of_orphanage, model.getOrphanageAddress().getCity()));
+            binding.tvPincodeOfOrphanage.setText(itemView.getContext().getString(R.string.pincode_of_orphanage, model.getOrphanageAddress().getPincode()));
+            binding.tvStateOfOrphanage.setText(itemView.getContext().getString(R.string.state_of_orphanage, model.getOrphanageAddress().getState()));
         }
     }
 
     @NonNull
     @Override
     public OrphanageAuthRequestsListAdapter.OrphanageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ListOrphanagePendingAuthRequestsBinding binding = ListOrphanagePendingAuthRequestsBinding.inflate(LayoutInflater.from(parent.getContext()),parent,false);
+        ListOrphanagePendingAuthRequestsBinding binding = ListOrphanagePendingAuthRequestsBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
         return new OrphanageViewHolder(binding);
     }
 

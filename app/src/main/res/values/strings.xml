@@ -6,6 +6,8 @@
     <string name="pincode_of_parents">Pincode : %s</string>
     <string name="district_of_parents">District : %s</string>
     <string name="state_of_parents">State : %s</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name_of_orphanage">Name : %s</string>
+    <string name="city_of_orphanage">City : %s</string>
+    <string name="pincode_of_orphanage">Pincode : %s</string>
+    <string name="state_of_orphanage">State : %s</string>
 </resources>

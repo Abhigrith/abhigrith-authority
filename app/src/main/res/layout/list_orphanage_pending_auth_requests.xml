@@ -52,10 +52,22 @@
                 android:textSize="15sp" />
 
             <TextView
-                android:id="@+id/tv_state_of_orphanage"
+                android:id="@+id/tv_pincode_of_orphanage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_city_of_orphanage"
+                android:layout_toEndOf="@+id/iv_orphanage_profile_picture"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="10dp"
+                android:text="Pincode of the Orphanage"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_state_of_orphanage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_pincode_of_orphanage"
                 android:layout_toEndOf="@+id/iv_orphanage_profile_picture"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
