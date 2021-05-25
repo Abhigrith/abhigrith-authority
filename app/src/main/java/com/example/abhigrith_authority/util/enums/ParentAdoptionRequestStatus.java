@@ -1,4 +1,4 @@
-package com.example.abhigrith_authority.enums;
+package com.example.abhigrith_authority.util.enums;
 
 public enum ParentAdoptionRequestStatus {
 

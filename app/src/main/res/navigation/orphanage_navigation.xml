@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/orphanagesPendingAuthRequestFragment"
-        android:name="com.example.abhigrith_authority.tabs.OrphanagesPendingAuthRequestFragment"
+        android:name="com.example.abhigrith_authority.ui.fragments.OrphanagesPendingAuthRequestFragment"
         android:label="fragment_orphanage_pending_auth_request"
         tools:layout="@layout/fragment_orphanage_pending_auth_request" >
         <action
@@ -17,11 +17,11 @@
 
     <fragment
         android:id="@+id/orphanageFullDetailFragment"
-        android:name="com.example.abhigrith_authority.orphanage.fragments.OrphanageFullDetailFragment"
+        android:name="com.example.abhigrith_authority.ui.fragments.OrphanageFullDetailFragment"
         android:label="fragment_orphanage_full_detail"
         tools:layout="@layout/fragment_orphanage_full_detail" >
         <argument
             android:name="orphanage"
-            app:argType="com.example.abhigrith_authority.orphanage.models.OrphanageModel" />
+            app:argType="com.example.abhigrith_authority.models.OrphanageModel" />
     </fragment>
 </navigation>

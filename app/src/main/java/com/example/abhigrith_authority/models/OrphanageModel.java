@@ -1,9 +1,7 @@
-package com.example.abhigrith_authority.orphanage.models;
+package com.example.abhigrith_authority.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-
-import org.jetbrains.annotations.NotNull;
 
 public class OrphanageModel implements Parcelable {
 

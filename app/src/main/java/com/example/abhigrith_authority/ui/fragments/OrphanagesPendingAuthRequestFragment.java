@@ -1,4 +1,4 @@
-package com.example.abhigrith_authority.tabs;
+package com.example.abhigrith_authority.ui.fragments;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -14,33 +14,21 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.abhigrith_authority.databinding.FragmentOrphanagePendingAuthRequestBinding;
-import com.example.abhigrith_authority.enums.ParentListingStatus;
-import com.example.abhigrith_authority.interfaces.OnOrphanageListItemClickListener;
-import com.example.abhigrith_authority.orphanage.adapters.OrphanageAuthRequestsListAdapter;
-import com.example.abhigrith_authority.orphanage.models.OrphanageModel;
+import com.example.abhigrith_authority.util.enums.ParentListingStatus;
+import com.example.abhigrith_authority.util.interfaces.OnOrphanageListItemClickListener;
+import com.example.abhigrith_authority.ui.adapters.OrphanageAuthRequestsListAdapter;
+import com.example.abhigrith_authority.models.OrphanageModel;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
 import org.jetbrains.annotations.NotNull;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link OrphanagesPendingAuthRequestFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class OrphanagesPendingAuthRequestFragment extends Fragment implements OnOrphanageListItemClickListener {
-
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
     private static final String TAG = "OrphanageAuthList";
     private static final String ORPHANAGE_COLLECTION_PATH = "orphanage_info";
     private static final String ORPHANAGE_STATUS_FIELD = "orphanageListingStatus";
-
-    private String mParam1;
-    private String mParam2;
 
     private FirebaseFirestore firestore;
     private FirestoreRecyclerOptions<OrphanageModel> options;
@@ -49,32 +37,6 @@ public class OrphanagesPendingAuthRequestFragment extends Fragment implements On
 
     public OrphanagesPendingAuthRequestFragment() {
         // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment OrphanagesPendingAuthRequestFragment.
-     */
-    public static OrphanagesPendingAuthRequestFragment newInstance(String param1, String param2) {
-        OrphanagesPendingAuthRequestFragment fragment = new OrphanagesPendingAuthRequestFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -107,19 +69,24 @@ public class OrphanagesPendingAuthRequestFragment extends Fragment implements On
     @Override
     public void onStart() {
         super.onStart();
-        adapter.startListening();
+        if(adapter != null) {
+            adapter.startListening();
+        }
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        adapter.stopListening();
+        if (adapter != null) {
+            adapter.stopListening();
+        }
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+        adapter = null;
     }
 
     private void setupOrphanageList(){

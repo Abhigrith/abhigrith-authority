@@ -1,4 +1,4 @@
-package com.example.abhigrith_authority.orphanage.adapters;
+package com.example.abhigrith_authority.ui.adapters;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.abhigrith_authority.R;
 import com.example.abhigrith_authority.databinding.ListOrphanagePendingAuthRequestsBinding;
-import com.example.abhigrith_authority.interfaces.OnOrphanageListItemClickListener;
-import com.example.abhigrith_authority.orphanage.models.OrphanageModel;
+import com.example.abhigrith_authority.util.interfaces.OnOrphanageListItemClickListener;
+import com.example.abhigrith_authority.models.OrphanageModel;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 

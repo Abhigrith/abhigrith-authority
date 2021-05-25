@@ -1,4 +1,4 @@
-package com.example.abhigrith_authority.parent.models;
+package com.example.abhigrith_authority.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;

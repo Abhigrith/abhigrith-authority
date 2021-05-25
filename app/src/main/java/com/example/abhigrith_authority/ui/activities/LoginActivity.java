@@ -1,9 +1,8 @@
-package com.example.abhigrith_authority;
+package com.example.abhigrith_authority.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -39,19 +38,16 @@ public class LoginActivity extends AppCompatActivity {
         firestore = FirebaseFirestore.getInstance();
         authorityDocReference = firestore.collection(AUTHORITY_COLLECTION_PATH);
 
-        binding.btnLoginSignin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String authorisedId = binding.etLoginAuthorisedId.getText().toString().trim();
-                String password = binding.etLoginPassword.getText().toString().trim();
+        binding.btnLoginSignin.setOnClickListener(v -> {
+            String authorisedId = binding.etLoginAuthorisedId.getText().toString().trim();
+            String password = binding.etLoginPassword.getText().toString().trim();
 
-                boolean checkWhetherAllFieldsAreFilled = checkWhetherAllFieldsAreFilledAndCorrect(authorisedId, password);
-                if (!checkWhetherAllFieldsAreFilled) {
-                    return;
-                }
-
-                getAuthorityLoggedIn(authorisedId, password);
+            boolean checkWhetherAllFieldsAreFilled = checkWhetherAllFieldsAreFilledAndCorrect(authorisedId, password);
+            if (!checkWhetherAllFieldsAreFilled) {
+                return;
             }
+
+            getAuthorityLoggedIn(authorisedId, password);
         });
 
         // TODO :: Please remove this skip button Avinash after your work has got completed

@@ -1,4 +1,4 @@
-package com.example.abhigrith_authority.parent.adapters;
+package com.example.abhigrith_authority.ui.adapters;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.abhigrith_authority.R;
 import com.example.abhigrith_authority.databinding.ListParentPendingAuthRequestsBinding;
-import com.example.abhigrith_authority.interfaces.OnParentListItemClickListener;
-import com.example.abhigrith_authority.parent.models.ParentsDetailModel;
+import com.example.abhigrith_authority.util.interfaces.OnParentListItemClickListener;
+import com.example.abhigrith_authority.models.ParentsDetailModel;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 

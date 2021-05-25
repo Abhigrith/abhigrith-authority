@@ -7,23 +7,20 @@
 
     <fragment
         android:id="@+id/parentsPendingAuthRequestFragment"
-        android:name="com.example.abhigrith_authority.tabs.ParentsPendingAuthRequestFragment"
+        android:name="com.example.abhigrith_authority.ui.fragments.ParentsPendingAuthRequestFragment"
         android:label="fragment_parent_pending_auth_request"
         tools:layout="@layout/fragment_parent_pending_auth_request" >
         <action
             android:id="@+id/action_parentsPendingAuthRequestFragment_to_parentFullDetailFragment"
             app:destination="@id/parentFullDetailFragment" />
-        <argument
-            android:name="parent"
-            app:argType="com.example.abhigrith_authority.parent.models.ParentsDetailModel" />
     </fragment>
     <fragment
         android:id="@+id/parentFullDetailFragment"
-        android:name="com.example.abhigrith_authority.parent.fragments.ParentFullDetailFragment"
+        android:name="com.example.abhigrith_authority.ui.fragments.ParentFullDetailFragment"
         android:label="fragment_parent_full_detail"
         tools:layout="@layout/fragment_parent_full_detail" >
         <argument
-            android:name="parent"
-            app:argType="com.example.abhigrith_authority.parent.models.ParentsDetailModel" />
+            android:name="parents"
+            app:argType="com.example.abhigrith_authority.models.ParentsDetailModel" />
     </fragment>
 </navigation>
