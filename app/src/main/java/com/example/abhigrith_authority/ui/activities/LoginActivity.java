@@ -49,12 +49,6 @@ public class LoginActivity extends AppCompatActivity {
 
             getAuthorityLoggedIn(authorisedId, password);
         });
-
-        // TODO :: Please remove this skip button Avinash after your work has got completed
-        binding.btnAuthorityLoginSkip.setOnClickListener(v -> {
-            Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
-            startActivity(intent);
-        });
     }
 
     private boolean checkWhetherAllFieldsAreFilledAndCorrect(String authorisedId, String password) {
