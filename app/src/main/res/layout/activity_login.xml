@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".LoginActivity">
-
+    tools:context=".ui.activities.LoginActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -51,13 +50,13 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/et_login_email"
+                    android:id="@+id/et_login_authorised_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
                     android:drawablePadding="10dp"
-                    android:hint="EMAIL/MOBILE"
+                    android:hint="Authorised Id"
                     android:inputType="text"
                     android:padding="20dp"
                     android:textColorHint="#606060"
@@ -71,7 +70,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="20dp"
                     android:drawablePadding="10dp"
-                    android:hint="PASSWORD"
+                    android:hint="Password"
                     android:inputType="textPassword"
                     android:padding="20dp"
                     android:textColorHint="#606060"
@@ -95,12 +94,12 @@
                     android:background="@drawable/button_background"
                     android:src="@drawable/ic_launcher_arrow_forward" />
 
-
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="60dp"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -126,13 +125,6 @@
                     android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/btn_authority_login_skip"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Skip" />
-
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
